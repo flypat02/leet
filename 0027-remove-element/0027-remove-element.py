@@ -1,9 +1,10 @@
 class Solution(object):
     def removeElement(self, nums, val):
-        for i in range(len(nums)):
-            if nums[0] != val:
-                nums.append(nums[0])
-                del nums[0]
-            else:
-                del nums[0]
+        if not nums:
+            return 0
+        
+        
+        while val in nums:
+            nums.remove(val)
+            
         return len(nums)
